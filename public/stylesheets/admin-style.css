@@ -23,6 +23,7 @@
   margin-bottom: 60px;
   color:#ac6700;
   position: relative;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .form-box h1::after {
@@ -64,11 +65,13 @@ input {
 form p {
   text-align: left;
   font-size: 15px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 form p a{
   text-decoration: none;
   color: #ac6700;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .btn-field {
@@ -78,7 +81,7 @@ form p a{
 }
 
 .btn-field button {
-  flex-basis: 48%;
+  flex-basis: 100%;
   background: #ac6700;
   color: #F2D492;
   height: 40px;
@@ -87,6 +90,7 @@ form p a{
   outline: 0;
   cursor: pointer;
   transition: 1s;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .input-group{
