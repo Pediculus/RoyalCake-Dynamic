@@ -16,16 +16,6 @@ function openCake(evt, cakeName) {
   /*Default open*/
   document.getElementById("defaultOpen").click();
 
-  /*View all button*/
-  function showMore(id) {
-       var more = document.getElementById(id + '-more');
-      if (more.style.display === "none") {
-          more.style.display = "block";
-      } else {
-          more.style.display = "none";
-      }
-  }
-
   /* Login page
   let signinbtn = document.getElementById("signinbtn");
   let nameField = document.getElementById("nameField");
