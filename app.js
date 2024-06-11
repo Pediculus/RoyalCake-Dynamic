@@ -3,9 +3,17 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var session = require('express-session');
+var bodyParser = require('body-parser');
+
+//library
+var flash   = require('express-flash');
+var session = require('express-session');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var postsRouter = require('./routes/posts'); // <-- route posts
+var loginRouter = require('./routes/login');
 
 var app = express();
 
@@ -19,8 +27,23 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+app.use(session({ 
+  cookie: { 
+    maxAge: 60000 
+  },
+  store: new session.MemoryStore,
+  saveUninitialized: true,
+  resave: 'true',
+  secret: 'secret'
+}))
+
+app.use(flash())
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/posts', postsRouter); // use route posts di Express
+app.use('/login', loginRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -37,5 +60,14 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(session({
+    secret: 'your-secret-key',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: true } // set to true if using HTTPS
+}));
 
 module.exports = app;
