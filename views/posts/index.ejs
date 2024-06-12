@@ -33,6 +33,14 @@
                                 <th scope="col">JUDUL POST</th>
                                 <th scope="col">CONTENT</th>
                                 <th scope="col">AKSI</th>
+                                <!--
+                                <th scope="col">No.</th>
+                                <th scope="col">ID Produk</th>
+                                <th scope="col">Nama Produk</th>
+                                <th scope="col">Foto Produk</th>
+                                <th scope="col">Harga Produk</th>
+                                <th scope="col">Aksi</th>
+                                -->
                               </tr>
                             </thead>
                             <tbody>
@@ -43,6 +51,12 @@
                                             <th scope="row" class="text-center"><%= (i+1) %></th>
                                             <td><%= data[i].title%></td>
                                             <td><%= data[i].content%></td>
+                                            <!--
+                                            <td><%= data[i].product_id></td>
+                                            <td><%= data[i].product_name></td>
+                                            <td><%= data[i].product_image></td>
+                                            <td><%= data[i].product_price></td>
+                                            -->
                                             <td class="text-center">
                                                 <a href="/posts/edit/<%=data[i].id%>" class="btn btn-sm btn-primary">EDIT</a>
                                                 <a onclick="return alert('Are You sure?')" href="/posts/delete/<%=data[i].id%>" class="btn btn-sm btn-danger">HAPUS</a>
@@ -52,7 +66,7 @@
                                     
                                 }else{ %>
                                     <tr>
-                                        <td colspan="4">
+                                        <td colspan="4"> <!--colspan = 6--> 
                                             <div class="alert alert-danger" role="alert">
                                                 Data Tidak Ditemukan !
                                             </div>
