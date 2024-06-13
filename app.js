@@ -14,6 +14,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var postsRouter = require('./routes/posts'); // <-- route posts
 var loginRouter = require('./routes/login');
+var dashRouter = require('./routes/dashboard');
+var productsRouter = require('./routes/products');
 
 var app = express();
 
@@ -44,6 +46,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/posts', postsRouter); // use route posts di Express
 app.use('/login', loginRouter);
+app.use('/dashboard', dashRouter);
+app.use('/products', productsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
