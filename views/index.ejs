@@ -33,13 +33,7 @@
                         <img src="/images/ROYAL CAKE savour full brown.png" style="width:100%;">
                     </div>
                     <div class="right">
-                    <p><b>Royal Cake Savour</b> yang berlokasi di Pontianak telah hadir untuk menemani momen keserian Anda. 
-                    <b>Royal Cake Savour</b> menyediakan aneka kue dan cemilan yang dapat Anda pilih. 
-                    Kami juga menerima pesanan kue untuk segala acara spesial Anda sesuai dengan yang diinginkan. 
-                    Kami menyadari bahwa setiap momen memiliki cerita dan tidak boleh terlewatkan, 
-                    maka dengan senang hati kami menerima aneka model pesanan kue yang dapat disesuaikan 
-                    dengan baik itu tema acara, ukuran, bentuk, hingga budget. Kami selalu berusaha untuk memberikan 
-                    yang terbaik demi kepuasan Anda.</p>
+                    <p><b>Royal Cake Savour</b> yang berlokasi di Pontianak telah hadir untuk menemani momen keserian Anda. <b>Royal Cake Savour</b> menyediakan aneka kue dan cemilan yang dapat Anda pilih. Kami juga menerima pesanan kue untuk segala acara spesial Anda sesuai dengan yang diinginkan. Kami menyadari bahwa setiap momen memiliki cerita dan tidak boleh terlewatkan, maka dengan senang hati kami menerima aneka model pesanan kue yang dapat disesuaikan dengan baik itu tema acara, ukuran, bentuk, hingga budget. Kami selalu berusaha untuk memberikan yang terbaik demi kepuasan Anda.</p>
                     <h3>Mengapa Royal Cake Savour?</h3>
                     <p>Kami selalu menggunakan bahan-bahan segar dan premium dalam proses pembuatan kue untuk pelanggan tercinta. Kami juga fokus kepada kepuasan pelanggan kami dan selalu berusaha yang terbaik dalam hal ini.</p>
                 </div>
@@ -51,12 +45,13 @@
         <div id="home" class="tabcontent">
             <section id="home" class="section">
                 <h1 style="text-align: center; font-size: xx-large;">Available Products</h1>
+                
                 <br>
                 <div class="selections">
                     <button class="content" onclick="openCake(event,'bento')"><img src="images/white-bento.png" style="width:200px"><p>Bento Cake</p></button>
-                    <button class="content" onclick="openCake(event,'mini-korean')"><img src="images/pumpkin-minikorean.png" style="width: 200px;"><p>Mini Korean</p></button>
                     <button class="content" onclick="openCake(event,'d12')"><img src="images/pink-piebis-d12.png" style="width:200px"><p>D12 Butter Cream</p></button>
                     <button class="content" onclick="openCake(event,'d15')"><img src="images/skin-chocolate.png" style="width: 200px;"><p>D15 Butter Cream</p></button>
+                    <button class="content" onclick="openCake(event,'mini-korean')"><img src="images/pumpkin-minikorean.png" style="width: 200px;"><p>Mini Korean</p></button>
                     <button class="content" onclick="openCake(event,'d18')"><img src="images/yellow-popcorn-d12.png" style="width:200px"><p>D18 Butter Cream</p></button>
                     <button class="content" onclick="openCake(event,'d20')"><img src="images/tango-oreo-d15.png" style="width:200px"><p>D20 Butter Cream</p></button>
                     <button class="content" onclick="openCake(event,'slice')"><img src="images/blackforest_slicecake.jpg" style="width:200px"><p>Slice Cake</p></button>
@@ -65,6 +60,7 @@
                 <h1 style="text-align: center; font-size: xx-large;">Find Us On</h1>
                 <p><img src="images/ig.png" style="width: 10%;"></p>
                 <p>Instagram @royalcakesavour</p>
+
             </section>
         </div>
 
@@ -74,12 +70,24 @@
                     <img src="images/bento-blue-lattice.png" alt="Bento Cake D10cm"/>
                 </div>
                 <div class="right">
-                    <h1>Bento Cake</h1>
-                        <div class="desc">
-                        <p>Kue ulang tahun mini dalam wadah styrofoam yang mudah dibawa dan sederhana tetapi tetap berkesan.</p>
-                        <pre>Ukuran           :               Diameter 10cm<br>Harga             :               Mulai dari Rp40.000,-<br>Base kue         :               Chocolate cake
-                        </pre>
-                        </div>
+                    <% if(data.length){
+                                    
+                        for(var i = 0; i<1; i++) {%>
+                                <h1><%= data[0].cake_name%></h1>
+                                <div class="desc">
+                                <pre><%= data[0].description%></pre>
+                                <pre>Harga             :               <%= data[0].price%></pre>
+                                </div>
+                                <%}
+                            }else{ %>
+                                <tr>
+                                    <td colspan="4">
+                                        <div class="alert alert-danger" role="alert">
+                                            Data Tidak Ditemukan !
+                                        </div>
+                                    </td>
+                                </tr>
+                            <% } %>
                     <div class="order">
                         <span>PEMESANAN</span>
                         <button><img src="images/ig.png" style="width:18px; height:18px"></button>
@@ -109,9 +117,22 @@
                     <div class="right">
                         <h1>Mini Korean Cake (D10cm)</h1>
                             <div class="desc">
-                            <p>Kue ulang tahun mini yang mudah dibawa dan sederhana tetapi tetap berkesan.</p>
-                            <pre>Ukuran          :               Diameter 10cm<br>Harga            :               Mulai dari Rp50.000,-<br>Base kue        :               Chocolate cake
-                            </pre>
+                                <% if(data.length){
+                                    
+                                    for(var i = 0; i<1; i++) {%>  
+                                            <pre><%= data[3].description%></pre>
+                                            <pre>Harga            :               <%= data[3].price%></pre>
+    
+                                            <%}
+                                        }else{ %>
+                                            <tr>
+                                                <td colspan="4">
+                                                    <div class="alert alert-danger" role="alert">
+                                                        Data Tidak Ditemukan !
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        <% } %>
                             </div>
                         <div class="order">
                             <span>PEMESANAN</span>
@@ -148,13 +169,26 @@
             <img src="images/goldleaf-flower-d12.png" alt="Diameter 12cm Birthday Cake"/>
         </div>
         <div class="right">
-            <h1>D12cm</h1>
-                <div class="desc">
-                <p>Kue ulang tahun dengan berbagai pilihan varian yang lezat dan desain yang menawan untuk dirayakan bersama orang-orang terdekat.</p>
-                <pre>Ukuran          :               Diameter 12cm<br>Harga            :               Mulai dari Rp75.000,-<br>Base kue        :               Chocolate cake
-                </pre>
-                </div>
+            <% if(data.length){
+                                    
+                for(var i = 0; i<1; i++) {%>
+                        <h1><%= data[1].cake_name%></h1>
+                        <div class="desc">
+                        <pre><%= data[1].description%></pre>
+                        <pre>Harga            :               <%= data[1].price%></pre>
+                        </div>
+                        <%}
+                    }else{ %>
+                        <tr>
+                            <td colspan="4">
+                                <div class="alert alert-danger" role="alert">
+                                    Data Tidak Ditemukan !
+                                </div>
+                            </td>
+                        </tr>
+                    <% } %>
                 <div class="variant-list">
+                    <br>
                 <h3>Variant List:</h3>
                     <ul>
                         <li><strong>Choco Delight</strong> (Chocolate cake dengan perpaduan coklat ganache dan krim coklat di setiap lapisannya).</li>
@@ -201,13 +235,26 @@
                 <img src="images/chocoball-d15.png" alt="Diameter 15cm Birthday Cake"/>
             </div>
             <div class="right">
-                <h1>D15cm</h1>
-                   <div class="desc">
-                    <p>Kue ulang tahun dengan berbagai pilihan varian yang lezat dan desain yang menawan untuk dirayakan bersama orang-orang terdekat.</p>
-                    <pre>Ukuran          :               Diameter 15cm<br>Harga            :               Mulai dari Rp100.000,-<br>Base kue        :               Chocolate cake
-                    </pre>
-                    </div>
+                <% if(data.length){
+                                    
+                    for(var i = 0; i<1; i++) {%>
+                            <h1><%= data[2].cake_name%></h1>
+                            <div class="desc">
+                            <pre><%= data[2].description%></pre>
+                            <pre>Harga            :               <%= data[2].price%></pre>
+                            </div>
+                            <%}
+                        }else{ %>
+                            <tr>
+                                <td colspan="4">
+                                    <div class="alert alert-danger" role="alert">
+                                        Data Tidak Ditemukan !
+                                    </div>
+                                </td>
+                            </tr>
+                        <% } %>
                     <div class="variant-list">
+                        <br>
                     <h3>Variant List:</h3>
                         <ul>
                             <li><strong>Choco Delight</strong> (Chocolate cake dengan perpaduan coklat ganache dan krim coklat di setiap lapisannya).</li>
@@ -249,11 +296,25 @@
             <div class="right">
                 <h1>D18cm</h1>
                     <div class="desc">
-                    <p>Kue ulang tahun dengan berbagai pilihan varian yang lezat dan desain yang menawan untuk dirayakan bersama orang-orang terdekat.</p>
-                    <pre>Ukuran          :               Diameter 18cm<br>Harga            :               Mulai dari Rp150.000,-<br>Base kue        :               Chocolate cake
-                    </pre>
+                        <% if(data.length){
+                                    
+                            for(var i = 0; i<1; i++) {%>  
+                                    <pre><%= data[4].description%></pre>
+                                    <pre>Harga            :               <%= data[4].price%></pre>
+    
+                                    <%}
+                                }else{ %>
+                                    <tr>
+                                        <td colspan="4">
+                                            <div class="alert alert-danger" role="alert">
+                                                Data Tidak Ditemukan !
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <% } %>
                     </div>
                     <div class="variant-list">
+                        <br>
                         <h3>Variant List:</h3>
                             <ul>
                                 <li><strong>Choco Delight</strong> (Chocolate cake dengan perpaduan coklat ganache dan krim coklat di setiap lapisannya).</li>
@@ -295,11 +356,25 @@
             <div class="right">
                 <h1>D20cm</h1>
                     <div class="desc">
-                    <p>Kue ulang tahun dengan berbagai pilihan varian yang lezat dan desain yang menawan untuk dirayakan bersama orang-orang terdekat.</p>
-                    <pre>Ukuran          :               Diameter 20cm<br>Harga            :               Mulai dari Rp200.000,-<br>Base kue        :               Chocolate cake
-                    </pre>
+                        <% if(data.length){
+                                    
+                            for(var i = 0; i<1; i++) {%>  
+                                    <pre><%= data[5].description%></pre>
+                                    <pre>Harga            :               <%= data[5].price%></pre>
+    
+                                    <%}
+                                }else{ %>
+                                    <tr>
+                                        <td colspan="4">
+                                            <div class="alert alert-danger" role="alert">
+                                                Data Tidak Ditemukan !
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <% } %>
                     </div>
                     <div class="variant-list">
+                        <br>
                         <h3>Variant List:</h3>
                             <ul>
                                 <li><strong>Choco Delight</strong> (Chocolate cake dengan perpaduan coklat ganache dan krim coklat di setiap lapisannya).</li>
@@ -333,47 +408,59 @@
         </div>
         </div>
          
-
-    <div id="slice" class="tabcontent">    
-        <div class="container flex">
-            <div class="left">
-                <img src="images/blackforest_slicecake.jpg" alt="Slice Cake"/>
-            </div>
-            <div class="right">
-                <h1>Slice Cake</h1>
-                    <div class="desc">
-                    <p>Slice cake dengan berbagai pilihan varian yang lezat yang memiliki hiasan dan tampilan yang elegan untuk meningkatkan mood saat menikmatinya.</p>
-                    <pre>Harga             :               Rp25.000,-<br>Base kue         :               Chocolate cake, Vanilla cake, Matcha cake
-                    </pre>
-                    </div>
-                    <div class="variant-list">
-                        <h3>Variant List:</h3>
-                            <ul>
-                                <li><strong>Blackforest</strong> (Chocolate cake dengan perpaduan selai strawberry dan whip cream, dihiasi parutan coklat dan cherry).</li>
-                                <li><strong>Matcha</strong> (Matcha cake dengan selai matcha, whip cream, dan taburan bubuk matcha di atasnya).</li>
-                                <li><strong>Orange Shortcake</strong> (Vanilla cake dengan isian jeruk dan whip cream).</li>
-                                <li><strong>Tiramisu Delight</strong> (Vanilla cake dengan perpaduan selai tiramisu dan whip cream).</li>
-                            </ul>
+        <div id="slice" class="tabcontent">    
+            <div class="container flex">
+                <div class="left">
+                    <img src="images/blackforest_slicecake.jpg" alt="Slice Cake"/>
+                </div>
+                <div class="right">
+                    <h1>Slice Cake</h1>
+                        <div class="desc">
+                            <% if(data.length){
+                                    
+                                for(var i = 0; i<1; i++) {%>  
+                                        <pre><%= data[6].description%></pre>
+                                        <pre>Harga             :               <%= data[6].price%></pre>
+        
+                                        <%}
+                                    }else{ %>
+                                        <tr>
+                                            <td colspan="4">
+                                                <div class="alert alert-danger" role="alert">
+                                                    Data Tidak Ditemukan !
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    <% } %>
                         </div>
-                <div class="order">
-                    <span>PEMESANAN</span>
-                    <button><img src="images/ig.png" style="width:18px; height:18px"></button>
-                    <button><img src="images/wa.png" style="width:18px; height:18px"></button>
-                </div>
-             </div>
-        </div>
-
-            <div class="variation-details">
-                <h2>Contoh Kue</h2>
-                <div class="variation-img">
-                <img src="images/orangeshortcake_slicecake.jpg"/>
-                <img src="images/matcha_slicecake.jpg"/>
-                <img src="images/blackforest_slicecake.jpg"/>
-                <img src="images/tiramisudelight_slicecake.jpg"/>
-                </div>
-            </div>
+                        <div class="variant-list">
+                            <br>
+                            <h3>Variant List:</h3>
+                                <ul>
+                                    <li><strong>Blackforest</strong> (Chocolate cake dengan perpaduan selai strawberry dan whip cream, dihiasi parutan coklat dan cherry).</li>
+                                    <li><strong>Matcha</strong> (Matcha cake dengan selai matcha, whip cream, dan taburan bubuk matcha di atasnya).</li>
+                                    <li><strong>Orange Shortcake</strong> (Vanilla cake dengan isian jeruk dan whip cream).</li>
+                                    <li><strong>Tiramisu Delight</strong> (Vanilla cake dengan perpaduan selai tiramisu dan whip cream).</li>
+                                </ul>
+                            </div>
+                    <div class="order">
+                        <span>PEMESANAN</span>
+                        <button><img src="images/ig.png" style="width:18px; height:18px"></button>
+                        <button><img src="images/wa.png" style="width:18px; height:18px"></button>
+                    </div>
+                 </div>
             </div>
     
+                <div class="variation-details">
+                    <h2>Contoh Kue</h2>
+                    <div class="variation-img">
+                    <img src="images/orangeshortcake_slicecake.jpg"/>
+                    <img src="images/matcha_slicecake.jpg"/>
+                    <img src="images/blackforest_slicecake.jpg"/>
+                    <img src="images/tiramisudelight_slicecake.jpg"/>
+                    </div>
+                </div>
+        </div>
     
     <div id="q&a" class="tabcontent">
         <div class="container">
@@ -463,39 +550,8 @@
           </div>
         </div>
     
-<!--Login Page
-    <div id="login" class="tabcontent">
-        <div class="container">
-            <div class="form-box">
-                <h1 id="title">Sign Up</h1>
-                <form>
-                    <div class="input-group">
-                        <div class="input-field" id="nameField">
-                            <input type="text" placeholder="Name">
-                        </div>
-    
-                        <div class="input-field">
-                            <input type="email" placeholder="Email">
-                        </div>
-    
-                        <div class="input-field">
-                            <input type="password" placeholder="Password">
-                        </div>
-                        <p>Forgot password? <a href="#">Click here!</a></p>
-                    </div>
-    
-                    <div class="btn-field">
-                        <button type="button" id="signupbtn">Sign Up</button>
-                        <button type="button" id="signinbtn" class="disable">Sign In</button>
-                    </div>
-    
-                </form>
-            </div>
-        </div>
-    </div>
 
-    -->
-
+</div>
     
     <!--Footer-->
       
@@ -505,9 +561,10 @@
                 <li><img src="images/ig.png" style="height:15px; width:15px"> <b>@royalcakesavour</b></li>
                 <li><img src="images/loc.png" style="height:17px; width:17px"> <b>Jl. Wonobaru, Warkop Super Horizon (samping Indomaret)</b></li>
             </ul>            
-        </footer>
+    </footer>
 
     <!--js-->
         <script src="/javascripts/script.js"></script>
+        
     </body>
     </html>
