@@ -15,7 +15,7 @@ var usersRouter = require('./routes/users');
 var postsRouter = require('./routes/posts'); // <-- route posts
 var loginRouter = require('./routes/login');
 var dashRouter = require('./routes/dashboard');
-var productsRouter = require('./routes/products');
+var productsRouter = require('./routes/crud');
 
 var app = express();
 
@@ -47,7 +47,7 @@ app.use('/users', usersRouter);
 app.use('/posts', postsRouter); // use route posts di Express
 app.use('/login', loginRouter);
 app.use('/dashboard', dashRouter);
-app.use('/products', productsRouter);
+app.use('/crud', productsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
